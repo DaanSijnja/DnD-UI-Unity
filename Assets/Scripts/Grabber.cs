@@ -4,14 +4,13 @@
 
 using System.Collections;
 using System.Collections.Generic;
-
 using UnityEngine;
 
 public class Grabber : MonoBehaviour
 {   
     private GameObject draggedObject;
     public GameObject selectedObject;
-
+    
     public int girdsize;
     // Update is called once per frame
     void Update()
@@ -44,12 +43,12 @@ public class Grabber : MonoBehaviour
             }
             else{
                 //Move the dragobject position to the curser posistion
-                DropAndDrag(0f);
+                DropAndDrag(0.5f);
             }
         }else{
             if(draggedObject != null){
                 //place the object down
-                DropAndDrag(0f);
+                DropAndDrag(0.06f);
                 //*!* add snapping to a grid
                 SnapToGrid();
                 //make the curser visable again
