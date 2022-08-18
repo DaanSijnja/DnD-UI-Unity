@@ -8,10 +8,18 @@ using UnityEngine;
 
 public class Grabber : MonoBehaviour
 {   
+    
+    private GameController _controlerScript;
     private GameObject draggedObject;
     public GameObject selectedObject;
     
     public int girdsize;
+
+    void Start(){
+        _controlerScript = this.GetComponent<GameController>();
+
+    }
+
     // Update is called once per frame
     void Update()
     {   
@@ -79,11 +87,10 @@ public class Grabber : MonoBehaviour
     }
 
     private void SnapToGrid(){
-       float cXpos = draggedObject.transform.position.x;
-       float cYpos = draggedObject.transform.position.y;
-       float cZpos = draggedObject.transform.position.z;
-
-    
+        //Make the tokens snap to the grid
+        float cXpos = draggedObject.transform.position.x;
+        float cYpos = draggedObject.transform.position.y;
+        float cZpos = draggedObject.transform.position.z;
         draggedObject.transform.position = new Vector3(Mathf.Round((cXpos/girdsize))*girdsize,cYpos,Mathf.Round((cZpos/girdsize))*girdsize);
     }
 

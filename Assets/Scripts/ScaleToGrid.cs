@@ -23,13 +23,13 @@ public class ScaleToGrid : MonoBehaviour
 
         gridHeigth = pixelHeight/gridsize;
         gridWidth = pixelWidth/gridsize;
-        float xscale = gridHeigth/10;
-        float zscale = gridWidth/10;
+        float zscale = gridHeigth/10;
+        float xscale = gridWidth/10;
 
         Debug.Log("Size is " + pixelHeight + " by " + pixelWidth);
 
         transform.localScale = new Vector3(xscale,1,zscale);
-        transform.position = new Vector3((10*xscale)/2-0.5f,0,(10*zscale)/2-0.5f);
+        transform.position = new Vector3((10*zscale)/2-0.5f,0,(10*xscale)/2-0.5f);
         
     }
 
