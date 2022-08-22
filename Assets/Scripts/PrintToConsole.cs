@@ -7,6 +7,7 @@ public class PrintToConsole : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
         Debug.Log("Hello world! Banaan!");
     }
 
@@ -15,4 +16,6 @@ public class PrintToConsole : MonoBehaviour
     {
         
     }
+
+    
 }
