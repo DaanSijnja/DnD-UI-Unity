@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1621873440838088120}
   - component: {fileID: 989592699864013607}
   - component: {fileID: 5032876460487120335}
+  - component: {fileID: 6553178681567269821}
   m_Layer: 0
   m_Name: Token
   m_TagString: drag
@@ -99,6 +100,31 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+--- !u!114 &6553178681567269821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 930699273281809079}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49fbdae9c0dddd844b9d4aa64318d922, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentHP: 0
+  maxHP: 0
+  tokenname: 
+  lvl: 0
+  weapons: []
+  size: 0
+  tokenType: 0
+  conditions: 
+  isHidden: 0
+  isVisable: 0
+  isDead: 0
+  icon: {fileID: 0}
+  lightsourceRange: 0
 --- !u!1 &7621188513951217519
 GameObject:
   m_ObjectHideFlags: 0
