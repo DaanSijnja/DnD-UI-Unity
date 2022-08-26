@@ -2,6 +2,7 @@
  * Has all the info about a token 
  * Daan Sijnja
  * V1: Made the script
+ * V2: added AC, nextHP and vision
  */
 
 using System.Collections;
@@ -45,24 +46,68 @@ public class TokenInfo : MonoBehaviour
     [SerializeField] public TokenType tokenType;
     [SerializeField] public float currentHP;
     [SerializeField] public float maxHP;
-    [SerializeField] public int lvl;
+    [SerializeField] public float nextHP;
+    [SerializeField] public float lvl;
+    [SerializeField] public int AC;
+    [SerializeField] public int vision;
+    [SerializeField] public int initative;
     [SerializeField] public int size;
     [SerializeField] public int totalMovement;
     [SerializeField] public int currentMovement;
     [SerializeField] public bool isHidden; 
     [SerializeField] public bool isVisable;
     [SerializeField] public bool isDead;
-    [SerializeField] public Texture2D icon;
+    [SerializeField] public Sprite tokenIcon;
     [SerializeField] public int lightsourceRange;
     [SerializeField] public List<WeaponClass> weapons;
     [SerializeField] public int ActiveWeapon;
     [SerializeField] public List<Conditions> conditions;
     [SerializeField] public List<Vector2> previousLocation;
 
+
+    //Mats
+    [SerializeField] private Material playerMaterial;
+    [SerializeField] private Material enemyMaterial;
+    [SerializeField] private Material allyMaterial;
+    //Token mesh
+    private Renderer thisRenderer;
+    //Token Childs
+    private Transform Icon;
     // Start is called before the first frame update
     void Start()
-    {
+    {   
+        //get the renderer
+        thisRenderer = this.GetComponent<Renderer>();
+
+        float localyscale = transform.localScale.y;
+        //setScale
+        transform.localScale = new Vector3(size,localyscale,size);
+
+        //get Child object Icon
+        Icon = transform.GetChild(0);
         
+        //set Icon
+        if(tokenIcon != null){
+            SpriteRenderer iconRenderer = Icon.GetComponent<SpriteRenderer>();
+            iconRenderer.sprite = tokenIcon;
+        }
+
+        //use the right material for each type
+        switch(tokenType)
+        {
+            case TokenType.player:
+                thisRenderer.material = playerMaterial;
+            break;
+
+            case TokenType.enemy:
+                thisRenderer.material = enemyMaterial;
+            break;
+
+            case TokenType.ally:
+                thisRenderer.material = allyMaterial;
+            break;
+
+        }
     }
 
     // Update is called once per frame
@@ -90,6 +135,21 @@ public class TokenInfo : MonoBehaviour
     public float getMaxHP(){
         return maxHP;
     }
+    public void setNextHP(int newNextHP){
+       nextHP = newNextHP;
+    } 
+    public void setAC(int newAC){
+       AC = newAC;
+    }  
+    public float getAC(){
+        return AC;
+    }
+    public void setVision(int newVision){
+       vision = newVision;
+    } 
+    public float getVision(){
+        return vision;
+    }
 
     /**visablity, hidden and death**/
     public void setHidden(bool i){
@@ -109,16 +169,30 @@ public class TokenInfo : MonoBehaviour
     public void setTokenName(string newName){
         tokenname = newName;
     }
-    public void setIcon(Texture2D newIcon){
-        icon = newIcon;
+    public void setIcon(Sprite newIcon){
+        tokenIcon = newIcon;
         //! Update the icon !
     }  
-    public Texture2D getIcon(){
-        return icon;
+    public Sprite getIcon(){
+        return tokenIcon;
     }
     public void setTokenType(TokenType type){
         tokenType = type;
-        //! Update Token Color !
+        switch(tokenType)
+        {
+            case TokenType.player:
+                thisRenderer.material = playerMaterial;
+            break;
+
+            case TokenType.enemy:
+                thisRenderer.material = enemyMaterial;
+            break;
+
+            case TokenType.ally:
+                thisRenderer.material = allyMaterial;
+            break;
+
+        }
     }
     public TokenType getTokenType(){
         return tokenType;
@@ -126,7 +200,8 @@ public class TokenInfo : MonoBehaviour
 
     public void setSize(int newSize){
         size = newSize;
-        //! Update size of the token
+        float localyscale = transform.localScale.y;
+        transform.localScale = new Vector3(size, localyscale, size);
     }
     public int getSize(){
         return size;
@@ -163,10 +238,10 @@ public class TokenInfo : MonoBehaviour
     }
 
     /**Lvl**/
-    public void setLvl(int newLvl){
+    public void setLvl(float newLvl){
         lvl = newLvl;
     }
-    public int getLvl(){
+    public float getLvl(){
         return lvl;
     }
 

@@ -134,6 +134,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Token (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 6553178681567269821, guid: f82fe40559c04754e8ff294a400c8dce, type: 3}
+      propertyPath: size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6553178681567269821, guid: f82fe40559c04754e8ff294a400c8dce, type: 3}
+      propertyPath: tokenIcon
+      value: 
+      objectReference: {fileID: 21300000, guid: 3b5299e16f5f3e143a1fd652095b623f, type: 3}
+    - target: {fileID: 6553178681567269821, guid: f82fe40559c04754e8ff294a400c8dce, type: 3}
+      propertyPath: tokenType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6553178681567269821, guid: f82fe40559c04754e8ff294a400c8dce, type: 3}
+      propertyPath: tokenname
+      value: Spider
+      objectReference: {fileID: 0}
+    - target: {fileID: 6553178681567269821, guid: f82fe40559c04754e8ff294a400c8dce, type: 3}
+      propertyPath: conditions.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8928991021885299829, guid: f82fe40559c04754e8ff294a400c8dce, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -517,6 +537,42 @@ PrefabInstance:
       propertyPath: m_Name
       value: Token
       objectReference: {fileID: 0}
+    - target: {fileID: 6553178681567269821, guid: f82fe40559c04754e8ff294a400c8dce, type: 3}
+      propertyPath: tokenIcon
+      value: 
+      objectReference: {fileID: 21300000, guid: e1f45437274b58049a1a6c8de010d02f, type: 3}
+    - target: {fileID: 6553178681567269821, guid: f82fe40559c04754e8ff294a400c8dce, type: 3}
+      propertyPath: tokenType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6553178681567269821, guid: f82fe40559c04754e8ff294a400c8dce, type: 3}
+      propertyPath: tokenname
+      value: Horse
+      objectReference: {fileID: 0}
+    - target: {fileID: 6553178681567269821, guid: f82fe40559c04754e8ff294a400c8dce, type: 3}
+      propertyPath: allyMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: f5ccc701b6938b44eb37e61712087c52, type: 2}
+    - target: {fileID: 6553178681567269821, guid: f82fe40559c04754e8ff294a400c8dce, type: 3}
+      propertyPath: enemyMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 9d49eb313bf60b540aa990c8242595b6, type: 2}
+    - target: {fileID: 6553178681567269821, guid: f82fe40559c04754e8ff294a400c8dce, type: 3}
+      propertyPath: playerMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 79b9b77ac194adf4c990a3b4bdc360e0, type: 2}
+    - target: {fileID: 6553178681567269821, guid: f82fe40559c04754e8ff294a400c8dce, type: 3}
+      propertyPath: weapons.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6553178681567269821, guid: f82fe40559c04754e8ff294a400c8dce, type: 3}
+      propertyPath: conditions.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6553178681567269821, guid: f82fe40559c04754e8ff294a400c8dce, type: 3}
+      propertyPath: weapons.Array.data[0]
+      value: 
+      objectReference: {fileID: -7628130014642062436, guid: 307688cd15997d3459eb6f4b742eee95, type: 3}
     - target: {fileID: 8928991021885299829, guid: f82fe40559c04754e8ff294a400c8dce, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -873,6 +929,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selectedObject: {fileID: 0}
+  tokenPrefab: {fileID: 930699273281809079, guid: f82fe40559c04754e8ff294a400c8dce, type: 3}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -3262,6 +3319,26 @@ PrefabInstance:
     - target: {fileID: 930699273281809079, guid: f82fe40559c04754e8ff294a400c8dce, type: 3}
       propertyPath: m_Name
       value: Token (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6553178681567269821, guid: f82fe40559c04754e8ff294a400c8dce, type: 3}
+      propertyPath: tokenIcon
+      value: 
+      objectReference: {fileID: 21300000, guid: ab99d98850ceae74888ece65d9e90d51, type: 3}
+    - target: {fileID: 6553178681567269821, guid: f82fe40559c04754e8ff294a400c8dce, type: 3}
+      propertyPath: tokenname
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 6553178681567269821, guid: f82fe40559c04754e8ff294a400c8dce, type: 3}
+      propertyPath: conditions.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6553178681567269821, guid: f82fe40559c04754e8ff294a400c8dce, type: 3}
+      propertyPath: conditions.Array.data[0]
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6553178681567269821, guid: f82fe40559c04754e8ff294a400c8dce, type: 3}
+      propertyPath: conditions.Array.data[1]
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8928991021885299829, guid: f82fe40559c04754e8ff294a400c8dce, type: 3}
       propertyPath: m_RootOrder
